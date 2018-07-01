@@ -1,0 +1,14 @@
+(1) linux  systemctl 单元文件详解
+
+* /usr/lib/systemd/system/ : 软件包安装的单元
+* /etc/systemd/system/: 系统管理员安装的单元
+上面两个根据优先级进行从低到高显示加载目录
+
+(2)
+#所有可用的单元文件存放在 /usr/lib/systemd/system/ 和 /etc/systemd/system/ 目录（后者优先级更高）。查看所有已安装服务：
+$ systemctl list-unit-files
+
+(3)
+systemctl show --property=UnitPath
+UnitPath=/etc/systemd/system /run/systemd/system /run/systemd/generator /usr/local/lib/systemd/system /usr/lib/systemd/system /run/systemd/generator.late
+
